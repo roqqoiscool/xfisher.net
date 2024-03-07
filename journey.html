@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xFisher : Our Journey</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-MC0eLU/axkUE0ZNDqA1z7HVN3Fz5Vr9fTKQmVKjDQ2L+gcNqz5q5p1hNUwD2j21h" crossorigin="anonymous">
+  <style>
+    /* Your CSS styles here */
+    body {
+      font-family: "Lato", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 10px 20px;
+      z-index: 1000;
+    }
+
+    .container {
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #fff;
+      margin: 6px 0;
+      transition: 0.4s;
+      position: relative;
+      left: -30px; /* Adjust this value to move further to the left */
+    }
+
+
+    .change .bar1 {
+      transform: translate(0, 11px) rotate(-45deg);
+    }
+
+    .change .bar2 {
+      opacity: 0;
+    }
+
+    .change .bar3 {
+      transform: translate(0, -11px) rotate(45deg);
+    }
+
+    .logo img {
+      width: 100px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .buy-now-main {
+      background-image: linear-gradient(to right, #7FFF00, #32CD32);
+      border: none;
+      color: white;
+      font-family: "Protest Strike";
+      font-size: 18px;
+      padding: 13px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: padding 0.15s ease, transform 0.2s ease;
+    }
+
+    .buy-now-main:hover {
+      padding: 15px 27px;
+    }
+
+    .buy-now-main:active {
+      padding: 19px 31px;
+      color: #fff;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-top: 30px;
+        color: #333; /* Dark grey */
+        font-size: 24px;
+        font-weight: bold; /* Added font weight */
+        margin-bottom: 20px; /* Add margin-bottom here */
+    }
+
+    .section-text {
+      text-align: center;
+      margin-top: 20px;
+      color: #333; /* Dark grey */
+      line-height: 1.6;
+    }
+
+    .buy-now-middle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: linear-gradient(to right, #7FFF00, #32CD32);
+      border: none;
+      color: white;
+      font-family: "Protest Strike";
+      font-size: 18px;
+      padding: 13px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: padding 0.15s ease, transform 0.2s ease;
+    }
+
+    .buy-now-middle:hover {
+      padding: 15px 27px;
+    }
+
+    .buy-now-middle:active {
+      padding: 19px 31px;
+      color: #fff;
+    }
+
+    .sidenav {
+      height: 100vh;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      background-color: #333;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      opacity: 0;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    }
+
+    .sidenav.open {
+      width: 250px;
+      opacity: 0.9;
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #fff;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    body {
+      overflow-y: auto; /* Show vertical scrollbar */
+      overflow-x: hidden; /* Hide horizontal scrollbar */
+    }
+    
+    .middle-content {
+        padding: 75px; /* Add padding as needed */
+        box-sizing: border-box; /* Ensure padding is included in the width */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; /* Adjust as needed */
+    }
+
+    .team-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the squares horizontally */
+  margin-top: 50px; /* Adjust margin as needed */
+}
+
+.square {
+  flex: 0 0 auto; /* Let the squares be flexible but don't allow them to grow */
+  width: 200px;
+  height: 200px;
+  border: 2px solid #001f3f; /* Dark blue border */
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 10px 20px; /* Add margin between squares and adjust as needed */
+  text-align: center; /* Center the content inside squares */
+}
+
+.name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.position {
+  margin-top: 5px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%; /* Prevent image overflow */
+  display: block;
+}
+
+
+
+    /* Footer styles */
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer p {
+      margin: 5px 0;
+    }
+
+    .map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust height as needed */
+  }
+
+  .map {
+    width: 600px; /* Adjust width as needed */
+    max-width: 100%; /* Ensure responsiveness */
+  }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo" onclick="location.href='index.html';">
+    <img src="images/logo.png" alt="Logo">
+  </div>
+
+  <div class="buy-now-main">
+    <a href="#">BUY NOW</a>
+  </div>
+
+  <div class="container open-btn" onclick="toggleNav()">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+</div> 
+
+<div class="middle-content"> 
+  <div class="section-header">OUR JOURNEY</div>
+  <div class="section-text">
+    In mid-December, fueled by enthusiasm and creativity, we embarked on our entrepreneurial journey. After careful deliberation, we crafted the core concept and name of our business, setting the foundation for what was to come. With equal parts passion and determination, we swiftly translated our vision into tangible elements, creating our inaugural logo and website to represent our brand identity. Eager to showcase our idea in action, we meticulously constructed a prototype using Lego bricks, bringing our concept to life in a tactile form.
+    
+    As the holiday season approached, we seized the opportunity to introduce our venture to the world through a captivating advertisement, capturing the attention of our target audience and igniting curiosity about our offering. Our efforts were soon rewarded when we clinched victory in the prestigious School Press competition, validating our innovation and dedication.
+    
+    With momentum building, we charged into the new year with purpose. January saw us laying the groundwork for our business operations, from procuring essential supplies to seeking potential sponsors who shared our vision. By the month's end, we eagerly welcomed the arrival of fiberglass materials, a crucial step towards materializing our product vision.
+    
+    January and February were marked by intense activity as we delved into the meticulous process of crafting our fiberglass components, laboring over each detail to ensure quality and precision. Concurrently, we began laying the groundwork for the integration of electronics, a pivotal phase in bringing our product to fruition. From cutting holes in the fiberglass box to receiving and wiring the necessary components, every step brought us closer to our goal.
+    
+    Amidst these efforts, we also dedicated time to enhancing our digital presence, making significant strides in the development of our official website. Additionally, we embraced innovation with the adoption of a revolutionary motor upgrade, promising enhanced performance and capabilities for our product.
+    
+    Looking ahead, we are fueled by a sense of anticipation and ambition. As we contemplate future enhancements such as wireless functionality, we are also eager to expand our reach and garner support from the local community. With an invitation extended to the regional press, we eagerly anticipate showcasing our progress and inviting others to join us on this exciting journey of innovation and entrepreneurship.    </div>
+</div>
+
+<div class="map-container">
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2029.4839567011284!2d11.350480776440262!3d59.425002703359596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4643f6c4d14f3e23%3A0xc49e0fd67e5fb13f!2sRakkestadhallene!5e0!3m2!1sno!2sno!4v1709066793219!5m2!1sno!2sno" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="index.html"><img src="images/home-icon.png" alt="‎" style="width: 24px; height: 24px;"> Home</a>
+  <a href="about.html"><img src="images/about-icon.png" alt="‎" style="width: 24px; height: 24px;"> About us</a>
+  <a href="products.html"><img src="images/products-icon.png" alt="‎"  style="width: 24px; height: 24px;"> Products</a>
+  <a href="journey.html"><img src="images/journey-icon.png" alt="‎" style="width: 24px; height: 24px;"> Our Journey</a>
+  <a href="sponsors.html"><img src="images/sponsors-icon.png" alt="‎" style="width: 24px; height: 24px;"> Sponsors</a>
+  <a href="contact.html"><img src="images/contact-icon.png" alt="‎" style="width: 24px; height: 24px;"> Contact</a>
+  <a href="press.html"><img src="images/press-icon.png" alt="‎" style="width: 24px; height: 24px;"> Press</a>
+
+  <div class="social-icons">
+    <img src="images/tiktok-icon.jpg" alt="TikTok" style="width: 24px; height: 24px;" onclick="location.href='https://www.tiktok.com/@xfisher.eb';">
+    <img src="images/youtube-icon.avif" alt="YouTube" style="width: 24px; height: 24px;" onclick="location.href='https://www.youtube.com/@xFisherEB';">
+    <img src="images/twitter-icon.avif" alt="Twitter/X" style="width: 24px; height: 24px;" onclick="location.href='https://twitter.com/xFisherEB';">
+  </div>
+</div>
+
+<div class="footer">
+  <div style="text-align: center;">
+    <img src="images/logo.png" alt="Logo" style="width: 100px; height: auto;">
+  </div>
+  <div style="text-align: center; margin-top: 10px;">
+    <p>Pages: <a href="index.html">Home</a> | <a href="about.html">About us</a> | <a href="products.html">Products</a> | <a href="journey.html">Our Journey</a> | <a href="sponsors.html">Sponsors</a> | <a href="contact.html">Contact</a> | <a href="press.html">Press</a></p>
+    <p>This is a student-led company, made with the help of UngT Entreprenørskap and made at Askim Ungdomsskole.</p>
+  </div>
+</div>
+
+<script>
+  function toggleNav() {
+    var sidenav = document.getElementById("mySidenav");
+    var container = document.querySelector('.container');
+
+    sidenav.classList.toggle("open");
+    container.classList.toggle("change");
+    document.body.style.backgroundColor = sidenav.classList.contains("open") ? "rgba(0,0,0,0.4)" : "white";
+  }
+</script>
+
+</body>
+</html>
